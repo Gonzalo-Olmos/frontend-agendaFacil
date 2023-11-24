@@ -31,6 +31,15 @@
             >
               Agenda
             </router-link>
+
+            <router-link
+              v-if="authStore.user && showEventosLink"
+              to="/eventos"
+              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              :class="{ 'bg-gray-900 text-white': $route.path === '/eventos' }"
+            >
+              Eventos
+            </router-link>
           </div>
   
           <div class="flex items-center">
@@ -91,6 +100,12 @@
         // Condición para mostrar el enlace de "Agenda" solo si el usuario está autenticado
         return this.authStore.user !== null;
       },
+      showEventosLink() {
+        // Condición para mostrar el enlace de "Eventos" solo si el usuario está autenticado
+        return this.authStore.user !== null;
+      },
+      
+
     },
     methods: {
       showUserMenu() {

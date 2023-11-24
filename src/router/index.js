@@ -33,6 +33,11 @@ const routes = [
         name: "agenda",
         component: () => import("../components/Agenda.vue")
     },
+    {
+        path: "/eventos",
+        name: "eventos",
+        component: () => import("../components/Eventos.vue")
+    },
 ];
 
 const router = createRouter({
